@@ -11,7 +11,7 @@ class Train:
             self.classifier = RandomForestClassifier(**self.parameters)
             self.classifier.fit(X, y)
         else:
-            raise "Not valid model"
+            raise Exception("Not valid model")
         return self
 
     def transform(self, X):

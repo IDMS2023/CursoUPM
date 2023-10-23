@@ -10,7 +10,7 @@ class Encoding:
             self.encoder = OrdinalEncoder(return_df=True)
             self.encoder.fit(X, y)
         else:
-            raise "Not available encoder"
+            raise Exception("Not available encoder")
         return self
 
     def transform(self, X):
