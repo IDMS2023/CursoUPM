@@ -1,17 +1,17 @@
 from sklearn.ensemble import RandomForestClassifier
 
-class Train:
 
-    def __init__(self, model, parameters):
+class Train:
+    def __init__(self, model="Random Forest", parameters={}):
         self.model = model
         self.parameters = parameters
 
     def fit(self, X, y):
-        if self.model == 'Random Forest':
+        if self.model == "Random Forest":
             self.classifier = RandomForestClassifier(**self.parameters)
             self.classifier.fit(X, y)
         else:
-            raise 'Not valid model'
+            raise "Not valid model"
         return self
 
     def transform(self, X):
