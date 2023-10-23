@@ -29,11 +29,13 @@ class ExecuteFlowAPI:
         stages.append(("dropnull", DropNull(request["percentage_of_nulls"])))
         # Missings
         stages.append(
-            ("missings",
-            Missings(
-                categorical_method=request["cat_method"],
-                numerical_method=request["num_method"],
-            ),)
+            (
+                "missings",
+                Missings(
+                    categorical_method=request["cat_method"],
+                    numerical_method=request["num_method"],
+                ),
+            )
         )
         # Encoding
         stages.append(("encoding", Encoding(request["method"])))
