@@ -1,4 +1,4 @@
-from componentsAPIs.API import ExecuteFlowAPI
+from componentsAPIs.API import API
 
 data = {
     "test_size": 0.3,
@@ -7,9 +7,9 @@ data = {
     "cat_method": "most_frequent",
     "num_method": "mean",
     "method": "ordinal",
-    "model": "Random Forest",
+    "model": "XGboost",
     "model_parameters": {"n_estimators": 200, "max_depth": 4},
 }
 
-results = ExecuteFlowAPI.post(data)
+results = API.post(data)
 print(results)
